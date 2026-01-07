@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Bissau - Programa de Testes Beta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            color: #2E7D32;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #388E3C;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #4CAF50;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4CAF50;
+        }
+        
+        .requirements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .requirement {
+            background: #e8f5e9;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        
+        .form-container {
+            background: #f0f7ff;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2E7D32;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            background: #FF9800;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: #F57C00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary {
+            background: #4CAF50;
+        }
+        
+        .btn-primary:hover {
+            background: #388E3C;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .step-number {
+            background: #4CAF50;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mercado Bissau</h1>
+            <p>Programa de Testes Beta - Seja um dos primeiros a experimentar</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Junte-se ao Nosso Programa Beta</h2>
+            <p>Estamos procurando usuários entusiastas como você para testar o aplicativo Mercado Bissau antes do lançamento oficial. Como testador beta, você terá acesso antecipado às funcionalidades e poderá influenciar o desenvolvimento do produto final.</p>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Acesso Antecipado</h3>
+                    <p>Seja um dos primeiros a usar o aplicativo Mercado Bissau antes do lançamento público</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💬</div>
+                    <h3>Influencie o Desenvolvimento</h3>
+                    <p>Sua opinião ajudará a moldar as funcionalidades e a experiência do usuário final</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Recompensas Exclusivas</h3>
+                    <p>Receba benefícios especiais e acesso gratuito a recursos premium</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Requisitos para Participar</h2>
+            <p>Para se tornar um testador beta, você precisa atender aos seguintes requisitos:</p>
+            
+            <div class="requirements">
+                <div class="requirement">📱 Smartphone Android 7.0+ ou iPhone 5s+</div>
+                <div class="requirement">📶 Conexão estável com a internet</div>
+                <div class="requirement">📝 Disposto a fornecer feedback</div>
+                <div class="requirement">⏰ Disponibilidade para testes regulares</div>
+                <div class="requirement">📍 Residente em Guinea-Bissau (preferencial)</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Como Funciona o Processo</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Inscrição</h3>
+                    <p>Preencha o formulário de inscrição com suas informações</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Seleção</h3>
+                    <p>Nossa equipe revisará sua inscrição e entrará em contato</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Instalação</h3>
+                    <p>Receba instruções para instalar a versão beta do aplicativo</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Teste & Feedback</h3>
+                    <p>Explore o aplicativo e compartilhe suas impressões conosco</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="form-container">
+            <h2>Inscreva-se Agora</h2>
+            <p>Preencha o formulário abaixo para se inscrever no programa de testes beta:</p>
+            
+            <form id="betaForm">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" required placeholder="Digite seu nome completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+245 XXX XXX XXX">
+                </div>
+                
+                <div class="form-group">
+                    <label for="device">Tipo de Dispositivo</label>
+                    <select id="device" name="device" required>
+                        <option value="">Selecione seu dispositivo</option>
+                        <option value="android">Android</option>
+                        <option value="iphone">iPhone</option>
+                        <option value="ipad">iPad</option>
+                        <option value="other">Outro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="model">Modelo do Dispositivo</label>
+                    <input type="text" id="model" name="model" placeholder="Ex: Samsung Galaxy S21, iPhone 12">
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Experiência com Testes de Apps</label>
+                    <select id="experience" name="experience">
+                        <option value="none">Nenhuma</option>
+                        <option value="beginner">Iniciante (1-3 apps)</option>
+                        <option value="intermediate">Intermediária (4-10 apps)</option>
+                        <option value="advanced">Avançada (10+ apps)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interest">Por que você quer ser testador beta?</label>
+                    <textarea id="interest" name="interest" rows="4" placeholder="Conte-nos o que motiva seu interesse em testar o Mercado Bissau"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Inscrever-se no Programa Beta</button>
+            </form>
+        </section>
+        
+        <section class="section">
+            <h2>Perguntas Frequentes</h2>
+            
+            <h3>Quanto tempo dura o programa beta?</h3>
+            <p>O programa de testes beta geralmente dura de 4 a 8 semanas, dependendo do feedback recebido e das atualizações necessárias.</p>
+            
+            <h3>É preciso pagar para participar?</h3>
+            <p>Não, a participação no programa beta é completamente gratuita. Além disso, testadores beta recebem benefícios exclusivos.</p>
+            
+            <h3>Quais dados são coletados durante os testes?</h3>
+            <p>Coletamos apenas dados necessários para melhorar o aplicativo, como relatórios de erro e métricas de uso. Nenhuma informação pessoal é compartilhada sem sua permissão.</p>
+            
+            <h3>Posso sair do programa a qualquer momento?</h3>
+            <p>Sim, você pode deixar o programa de testes beta a qualquer momento desinstalando o aplicativo e nos notificando.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Mercado Bissau. Todos os direitos reservados.</p>
+            <p>Programa de Testes Beta - Ajude-nos a criar a melhor experiência de marketplace local</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('betaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envio do formulário
+            const btn = document.querySelector('.btn-primary');
+            const originalText = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            
+            // Simular processo de envio
+            setTimeout(function() {
+                alert('Obrigado por se inscrever! Entraremos em contato em breve com instruções para instalar o aplicativo beta.');
+                btn.textContent = originalText;
+                btn.disabled = false;
+                document.getElementById('betaForm').reset();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
